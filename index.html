@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular Shopping List</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body ng-app="shoppingList">
+    <div class="container">
+      <header>My Shopping List</header>
+      <div ng-controller="listCtrl">
+        <div class="itemsDiv">
+          <ul>
+            <li ng-repeat="item in items">{{item}} <span ng-click="removeItem($index)" class="fa fa-times-circle"></span></li>
+          </ul>
+        </div>
+        
+        <input type="text" name="text" placeholder="Add item..." ng-model="toAdd">
+        <button type="button" name="button" ng-click="addItem()">Add</button>
+        <p>{{error}}</p>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
